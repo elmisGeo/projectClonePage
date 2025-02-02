@@ -1,0 +1,225 @@
+<!-- I was suppose to make this page responsive, but I got lazy lol. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project</title>
+
+	<link rel="shortcut icon" href="./images/cabbageIcon.ico" type="image/x-icon">
+	<link href="./css/mdb.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+	<style>
+		body {
+			background: url(./images/cabbage1.jpg);
+			background-size: 600px;
+			background-position: center;;
+			background-attachment: fixed;
+		}
+
+		h1 {
+			margin-top: 15vh;
+		}
+
+		.modal {
+			margin-top: 25vh !important;
+		}
+
+		@keyframes slideUp {
+			from {
+				transform: translateY(200px);
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.instruct-image {
+			width: 30vw;
+			box-shadow: 0 7px 15px #00000059;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container justify-content-between">
+	  <a class="navbar-brand" href="#">
+		  <img src="./images/cabbageIcon.png" height="30" alt="Cabbage Logo" loading="lazy"/>
+	  </a>
+
+	  <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ms-auto">
+		  <li class="nav-item">
+			<a class="nav-link" href="./index.html">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link active" href="#">Instructions</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+</nav>
+
+<div class="container">
+    <div class="card w-75 mx-auto m-5">
+        <div class="card-header"><h2>Cloning Project to Visual Studio</h2></div>
+        <div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 1</h2>
+                <p>
+                    Open Visual Studio then click on <strong>"File"</strong> 
+                    in the top right corner then click 'Clone Repository'
+                </p>
+            </div>
+			<div>
+				<img src="./images/instruct1.png" class="card instruct-image" alt="">
+			</div>
+        </div>
+		<div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 2</h2>
+                <p>
+                    Paste the link given from the "Copy Code" button in the <br><strong>"Repository Location"</strong> box.
+					 The link should be the same as the example on the right.
+                </p>
+				<p style="color: #9b9b9b;">(Do not chnage the <strong>"Path"</strong> location unless you know what you are doing.)</p>
+				<p>Click the <strong>"Clone"</strong> button, and wait for the cloning process to finish.</p>
+            </div>
+			<div>
+				<img src="./images/instruct2.png" class="card instruct-image" alt="">
+			</div>
+        </div>
+		<div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 3</h2>
+                <p>
+                    In the <strong>"Solution Explorer"</strong>, look for the <strong>"Project.sln"</strong> 
+					then <strong>double click</strong> it to open project.
+                </p>
+            </div>
+			<div class="pb-3">
+				<img src="./images/instruct3.jpg" class="card instruct-image" alt="">
+			</div>
+        </div>
+    </div>
+
+	<div class="card w-75 mx-auto m-5">
+        <div class="card-header"><h2>Changing Server Name</h2></div>
+        <div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 1</h2>
+                <p>
+                    After opening the project file, expand the project by clicking the arrow beside the vb icon of Project
+                </p>
+            </div>
+			<div>
+				<img src="./images/instruct4.jpg" class="card instruct-image" alt="">
+			</div>
+        </div>
+		<div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 2</h2>
+                <p>
+                    Double click the <strong>"databaseConnection.vb"</strong> to edit the file.
+					<br><br>
+					After opeing the file, look for the: <br> <strong>"Server=DESKTOP-0O55DTE\SQLEXPRESS;"</strong>
+					<br><br>
+					Since you will be raplacing the server name, clear the content inside the 
+					<strong>equal sign "="</strong> and <strong>semi colon ";"</strong>.
+                </p>
+            </div>
+			<div>
+				<img src="./images/instruct5.jpg" class="card instruct-image" alt="">
+			</div>
+        </div>
+		<div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 3</h2>
+                <p>
+                    If you dont know the name of your server, open <strong>Microsoft SQL Server Management Studio.</strong>
+					<br><br>
+					Copy the text inside the <strong>Server Name</strong>.
+                </p>
+            </div>
+			<div>
+				<img src="./images/instruct6.jpg" class="card instruct-image" alt="">
+			</div>
+        </div>
+		<div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Step 4</h2>
+                <p>
+                    After copying the server name, paste it in the <strong>databaseConnection.vb</strong> file.
+                </p>
+            </div>
+			<div>
+				<img src="./images/instruct7.jpg" class="card instruct-image" alt="">
+			</div>
+        </div>
+    </div>
+
+	<div class="card w-75 mx-auto m-5">
+        <div class="card-header"><h2>Additional Stuff...</h2></div>
+        <div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>Database Name & Table</h2>
+                <p>
+                    Make sure you also modile the <strong>"database"</strong> value in the <strong>databaseConnection.vb</strong> file.
+				</p>
+				<p style="
+					border-radius: 5px;
+					border: 1px solid blue;
+					background: #cdcdff;
+					padding: 10px;">
+					<strong>Reminder:</strong> replace the database in the <strong>databaseConnection.vb</strong> 
+					file with the same name as the database in the <strong>Microsoft SQL Server Management Studio</strong>.
+				</p>
+				<p>
+					Also, make sure to have the same tables in the database:
+                </p>
+
+				<ul>
+					<li>LogIn_Table</li>
+					<li>Product_Table</li>
+					<li>ProductGroup_Table</li>
+				</ul>
+				
+
+				<p style="
+					border-radius: 5px;
+					border: 1px solid orange;
+					background: #ffe7bb;
+					padding: 10px;">
+				<strong>Warning:</strong> The project won't work properly if any 
+				of these tables are not present or not similar to the examples on the right.
+				</p>
+				<p>
+					If you have done all the steps properly, you can now run the project.
+				</p>
+            </div>
+			<div>
+				<img src="./images/instruct8.jpg" class="card instruct-image mb-4" alt="">
+				<p class="text-center">ProductGroup_Table</p>
+				<img src="./images/instruct9.jpg" class="card instruct-image mb-4" alt="">
+				<p class="text-center">Product_Table</p>
+				<img src="./images/instruct9.1.jpg" class="card instruct-image mb-4" alt="">
+				<p class="text-center">LogIn_Table</p>
+				<img src="./images/instruct9.2.jpg" class="card instruct-image mb-4" alt="">
+			</div>
+    </div>
+</div>
+
+<script src="./js/mdb.umd.min.js"></script>
+</body>
+</html>

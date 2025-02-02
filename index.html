@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project</title>
+
+	<link rel="shortcut icon" href="./images/cabbageIcon.ico" type="image/x-icon">
+	<link href="./css/mdb.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+	<style>
+		body {
+			background: url(./images/cabbage1.jpg);
+			background-size: cover;
+			background-position: center;
+
+			overflow-y: hidden;
+		}
+
+		h1 {
+			margin-top: 15vh;
+		}
+
+		.program-image {
+			box-shadow: 0 0 20px #00000094;
+			animation: slideUp 1s ease-in-out forwards;
+			transform: translateY(200px);
+			opacity: 0;
+			border-radius: 10px;
+		}
+
+		.modal {
+			margin-top: 25vh !important;
+		}
+
+		@keyframes slideUp {
+			from {
+				transform: translateY(200px);
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container justify-content-between">
+	  <a class="navbar-brand" href="#">
+		  <img src="./images/cabbageIcon.png" height="30" alt="Cabbage Logo" loading="lazy"/>
+	  </a>
+
+	  <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ms-auto">
+		  <li class="nav-item">
+			<a class="nav-link active" href="#">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./instructions.html">Instructions</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="row justify-content-center text-center">
+		<div class="col-lg-6 col-md-8 col-sm-10">
+			<h1>Copy Code Project</h1>
+			<h5>Basa ug instructions para di pa mag balik balik.</h5>
+
+			<div class="d-flex justify-content-center mt-3">
+				<button type="button" class="btn btn-primary" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+					Copy Code
+				</button>
+			</div>
+		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Reminder, na dili na kamo! jk...</h5>
+				<button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">After clicking "ok", <strong>read the instructions properly</strong>.
+					<br>🐈<br> 
+					I made the instructions in <strong>english</strong> dahil tayo ay nasa <strong>FINE DINING RESTAURANT</strong> lol. Good luck!</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-mdb-ripple-init  data-mdb-dismiss="modal" onclick="copyText()">Ok</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="col-12 d-flex justify-content-center mt-5">
+			<img src="./images/Cover.jpg" class="program-image img-fluid w-75 w-md-75" alt="Cover Image">
+		</div>
+	</div>
+</div>
+
+<script>
+function copyText() {
+	let gitLink = "https://github.com/elmisGeo/Project.git";
+    var copyInput = gitLink;
+
+    if (copyInput) {
+        navigator.clipboard.writeText(copyInput).then(() => {
+			console.log("Copied to clipboard" + copyInput);
+			 window.location.href = "./instructions.html";
+        }).catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+    }
+}
+</script>
+
+
+<script src="./js/mdb.umd.min.js"></script>
+</body>
+</html>

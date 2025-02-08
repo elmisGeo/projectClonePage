@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Project</title>
+
+	<link rel="shortcut icon" href="./images/cabbageIcon.ico" type="image/x-icon">
+	<link href="./css/mdb.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+	<style>
+		* ::-webkit-scrollbar {
+			display: none;
+		}
+
+		body {
+			background: url(./images/cabbage1.jpg);
+			background-size: 600px;
+			background-position: center;;
+			background-attachment: fixed;
+		}
+
+		nav {
+			position: fixed !important;
+			top: 0;
+			width: 100vw;
+			z-index: 2;
+		}
+
+		h1 {
+			margin-top: 15vh;
+		}
+
+		.modal {
+			margin-top: 25vh !important;
+		}
+
+		@keyframes slideUp {
+			from {
+				transform: translateY(200px);
+				opacity: 0;
+			}
+			to {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		.instruct-image {
+			width: 30vw;
+			box-shadow: 0 7px 15px #00000059;
+			margin-left: 20px;
+		}
+
+        textarea {
+            border: 1px solid blue;
+            border-radius: 10px;
+            width: 64vw;
+            height: 40vh;
+            resize: none;
+        }
+	</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container justify-content-between">
+	  <a class="navbar-brand" href="#">
+		  <img src="./images/cabbageIcon.png" height="30" alt="Cabbage Logo" loading="lazy"/>
+	  </a>
+
+	  <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<i class="fas fa-bars"></i>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ms-auto">
+		  <li class="nav-item">
+			<a class="nav-link" href="index.html">Home</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./instructions.html">Instructions</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link active" href="#">Code Changes</a>
+		  </li>
+		</ul>
+	  </div>
+	</div>
+</nav>
+
+<div style="margin: 12vh;"></div>
+
+<div class="container">
+	<div class="card w-75 mx-auto">
+		<div class="card-header"><h2>Instructions</h2></div>
+		<ol class="mt-3">
+			<li>After clicking the <strong>"Copy Code"</strong> button, open the file you want to edit immediately.</li>
+			<li>In your file, click anywhere to select a text.</li>
+			<li>Select all by pressing <strong>"Ctrl" + "A"</strong> to select all text in the code.</li>
+			<li>Then paste. <strong>("Ctrl" + "V")</strong></li>
+			<li>Lastly, save the file. <strong>("Ctrl" + "S")</strong></li>
+		</ol>
+	</div>
+
+    <div class="card w-75 mx-auto m-5">
+        <div class="card-header"><h2>Code Changes</h2></div>
+        <div class="card-text px-4 py-3 d-flex">
+            <div>
+                <h2>FORM 3</h2>
+                <p>
+                    <p>The following code fixes these errors:</p>
+                    <ul>
+                        <li>Unable to delete/save after editing.</li>
+                        <li>App crashing when table header is clicked.</li>
+                    </ul>
+                </p>
+				
+				<button type="button" class="btn btn-primary" onclick="copyText()" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+					Copy Code
+				</button>
+
+                <script>
+                    function copyText() {
+                        fetch("form3.txt") // Replace with your file path
+                            .then(response => response.text())
+                            .then(text => {
+                                navigator.clipboard.writeText(text).then(() => {
+                                    console("Text copied to clipboard!");
+                                }).catch(err => {
+                                    console.error("Failed to copy:", err);
+                                });
+                            })
+                            .catch(err => {
+                                console.error("Error fetching the file:", err);
+                            });
+                    }
+                </script>
+            </div>
+        </div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Code copied.</h5>
+				<button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Paste the code in form3.vb file in Visual Studio.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-mdb-ripple-init  data-mdb-dismiss="modal" >Ok	</button>
+				</div>
+			</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+
+
+<script src="./js/mdb.umd.min.js"></script>
+</body>
+</html>

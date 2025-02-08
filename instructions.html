@@ -12,11 +12,22 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
 	<style>
+		* ::-webkit-scrollbar {
+			display: none;
+		}
+
 		body {
 			background: url(./images/cabbage1.jpg);
 			background-size: 600px;
 			background-position: center;;
 			background-attachment: fixed;
+		}
+
+		nav {
+			position: fixed !important;
+			top: 0;
+			width: 100vw;
+			z-index: 2;
 		}
 
 		h1 {
@@ -66,10 +77,15 @@
 		  <li class="nav-item">
 			<a class="nav-link active" href="#">Instructions</a>
 		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="./codes.html">Code Changes</a>
+		  </li>
 		</ul>
 	  </div>
 	</div>
 </nav>
+
+<div style="margin: 12vh;"></div>
 
 <div class="container">
     <!-- <div class="card w-75 mx-auto m-5 d-none">
@@ -170,7 +186,7 @@
 				<img src="./images/d3.png" class="card instruct-image" alt="">
 			</div>
         </div>
-		<div class="card-text px-4 py-3 d-flex">
+		<div class="card-text px-4 py-3 d-flex mb-3">
             <div>
 				<p style="
 					border-radius: 5px;
@@ -233,7 +249,7 @@
 				<img src="./images/instruct6.jpg" class="card instruct-image" alt="">
 			</div>
         </div>
-		<div class="card-text px-4 py-3 d-flex">
+		<div class="card-text px-4 py-3 d-flex mb-3">
             <div>
                 <h2>Step 4</h2>
                 <p>
@@ -292,7 +308,7 @@
 				<p class="text-center">Product_Table</p>
 				<img src="./images/instruct9.1.jpg" class="card instruct-image mb-4" alt="">
 				<p class="text-center">LogIn_Table</p>
-				<img src="./images/instruct9.2.jpg" class="card instruct-image mb-4" alt="">
+				<img src="./images/instruct9.2.jpg" class="card instruct-image mb-3" alt="">
 			</div>
     </div>
 </div>
